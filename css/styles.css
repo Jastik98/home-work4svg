@@ -2,10 +2,9 @@ body {
   font-family: "Roboto", sans-serif;
   color: #434455;
   background-color: #fff;
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.5;
   width: 1440px;
-  height: 3300px;
 }
 h1,
 h2,
@@ -60,8 +59,35 @@ ol {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: block;
+  height: 72px;
+}
+.character-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+.character-list-linkul {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.nav-link:active::after {
+  content: "";
+  border-radius: 2px;
+  width: 48px;
+  height: 4px;
+  background: #404bbf;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
 }
 .address-headera {
   font-style: normal;
@@ -84,8 +110,16 @@ ol {
   color: #404bbf;
 }
 .hero {
-  background: #2e2f42;
   padding: 188px 0;
+  background-color: rgb(46, 47, 66);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/decorat/people-office\ 1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin: border-box;
 }
 .title {
   font-weight: 700;
@@ -152,6 +186,22 @@ ol {
 .ul-items {
   width: calc((100% - 72px) / 4);
 }
+
+.svg-img {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.svg-test {
+  width: 64px;
+  height: 64px;
+}
 .logo-ourteam {
   font-weight: 700;
   font-size: 36px;
@@ -170,7 +220,7 @@ ol {
   background: #fff;
   border-radius: 0 0 4px 4px;
   width: 264px;
-  height: 380px;
+  height: 428px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
@@ -193,6 +243,7 @@ ol {
   line-height: 150%;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
 }
 .character-ul {
   display: flex;
@@ -229,6 +280,16 @@ ol {
   flex-wrap: wrap;
   gap: 24px;
   row-gap: 48px;
+}
+.hovertwo-portfolio:hover .overlay {
+  background-color: #4d5ae5;
+  transform: translateY(0);
+  width: 360px;
+  height: 300px;
+}
+.hovertwo-portfolio {
+  position: relative;
+  overflow: hidden;
 }
 
 .logo-footer {
@@ -271,7 +332,25 @@ ol {
 .section-discrip {
   padding: 120px 0;
 }
+.overlay {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  max-width: 360px;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
 
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .cont-portfolio-disc {
   border-bottom: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
@@ -285,4 +364,23 @@ ol {
 .footer {
   background: #2e2f42;
   padding: 100px 0;
+}
+.footer-contant {
+  display: flex;
+  gap: 120px;
+}
+.footer-socialmedia {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-socialmedia-list {
+  display: flex;
+  gap: 16px;
+}
+.footer-list-link:hover {
+  background-color: #31d0aa;
 }
