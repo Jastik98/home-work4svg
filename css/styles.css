@@ -4,7 +4,6 @@ body {
   background-color: #fff;
   margin: 0 auto;
   line-height: 1.5;
-  width: 1440px;
 }
 h1,
 h2,
@@ -18,6 +17,7 @@ p {
 img {
   display: block;
   max-width: 100%;
+  max-height: 100%;
 }
 a {
   text-decoration: none;
@@ -30,6 +30,8 @@ ol {
 }
 .content-headera {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .container {
   width: 1158px;
@@ -64,30 +66,45 @@ ol {
   display: block;
   height: 72px;
 }
+.nav-linkstatic {
+  position: relative;
+  color: #404bbf;
+}
+.nav-linkstatic::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background: #404bbf;
+}
 .character-list-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
+}
+.character-list-link:hover,
+.character-list-link:active {
+  background-color: #404bbf;
+}
+.character-list-item {
+  width: 40px;
+  height: 40px;
+}
+.character-list-icon {
+  fill: #f4f4fd;
 }
 .character-list-linkul {
   display: flex;
   gap: 24px;
   justify-content: center;
-}
-.nav-link:active::after {
-  content: "";
-  border-radius: 2px;
-  width: 48px;
-  height: 4px;
-  background: #404bbf;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 20px;
 }
 .address-headera {
   font-style: normal;
@@ -108,17 +125,20 @@ ol {
 .address-contact:hover,
 .address-contact:focus {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero {
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 188px 0;
-  background-color: rgb(46, 47, 66);
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/decorat/people-office\ 1.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
   background-origin: border-box;
 }
 .title {
@@ -134,6 +154,7 @@ ol {
   margin-right: auto;
 }
 .main-button {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background: #4d5ae5;
   font-weight: 500;
   font-size: 16px;
@@ -282,14 +303,17 @@ ol {
   row-gap: 48px;
 }
 .hovertwo-portfolio:hover .overlay {
-  background-color: #4d5ae5;
   transform: translateY(0);
-  width: 360px;
-  height: 300px;
+}
+.hovertwo-portfolio:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
 }
 .hovertwo-portfolio {
   position: relative;
   overflow: hidden;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-footer {
@@ -338,18 +362,19 @@ ol {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  max-width: 360px;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-
+  background-color: #4d5ae5;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-img-hidden {
+  position: relative;
+  overflow: hidden;
 }
 .cont-portfolio-disc {
   border-bottom: 1px solid #e7e9fc;
@@ -365,10 +390,7 @@ ol {
   background: #2e2f42;
   padding: 100px 0;
 }
-.footer-contant {
-  display: flex;
-  gap: 120px;
-}
+
 .footer-socialmedia {
   font-weight: 500;
   font-size: 16px;
@@ -381,6 +403,14 @@ ol {
   display: flex;
   gap: 16px;
 }
-.footer-list-link:hover {
+.footer-list-link:hover,
+.footer-list-link:active {
   background-color: #31d0aa;
+}
+.divfootera {
+  display: flex;
+  align-items: baseline;
+}
+.footer-contant {
+  margin-right: 120px;
 }
